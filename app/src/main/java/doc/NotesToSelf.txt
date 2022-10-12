@@ -1,0 +1,4 @@
+Navigation
+- BottomNavigation component intended to be used with Fragments, not Activities
+- When to use Activities?
+- Alot of duplicated code if navigation done this way
