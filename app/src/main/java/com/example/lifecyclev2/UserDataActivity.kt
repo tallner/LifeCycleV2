@@ -12,11 +12,17 @@ class UserDataActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_data)
 
-        val name = intent.getStringExtra("EXTRA_NAME")
-        val nameout = findViewById<TextView>(R.id.name_output)
 
-        nameout.text = name
+        findViewById<TextView>(R.id.name_output).text =
+            "Your name is " + intent.getStringExtra("EXTRA_NAME") +
+            " and you are " + intent.getStringExtra("EXTRA_AGE") + " years old."
 
+        findViewById<TextView>(R.id.rating_output).text =
+            "Your rate yourself to " + intent.getStringExtra("EXTRA_RATING") + " out of 5 stars."
+
+        findViewById<TextView>(R.id.fav_output).text =
+            "You love " + intent.getStringExtra("EXTRA_DISH") + " and these animals: " +
+            intent.getStringExtra("EXTRA_ANIMALS")
 
 
         val bottomNav: BottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
