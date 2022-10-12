@@ -76,8 +76,8 @@ class UserSettingsActivity : AppCompatActivity() {
 
                     it.putExtra("EXTRA_NAME",name.text.toString())
                     it.putExtra("EXTRA_AGE",age.text.toString())
-                    it.putExtra("EXTRA_RATING",rating.rating.toString())
-                    it.putExtra("EXTRA_DISH",selectedRadioButton.text.toString())
+                    it.putExtra("EXTRA_RATING",rating?.rating.toString())
+                    it.putExtra("EXTRA_DISH",selectedRadioButton?.text.toString())
                     it.putExtra("EXTRA_ANIMALS",animals)
 
                     startActivity(it)
