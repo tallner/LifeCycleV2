@@ -4,3 +4,5 @@ Navigation
 - Alot of duplicated code if navigation done this way
 
 Don't take care of empty inputs
+
+onRestoreInstanceState does not work, always null after oncreate
