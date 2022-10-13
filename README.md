@@ -10,7 +10,7 @@ Login
 ### Andra Activiten/fragment  
 Formulär
 - [x] 5 olika typer av data/ui componenter  
-- [ ] Skicka/submita datan med button
+- [x] Skicka/submita datan med button
 
 ### Meny  
 Valfri typ  
@@ -28,5 +28,5 @@ Uppfyll 2 av 4 punkterna
 
 ## Egna krav   
 - [ ] Spara lösenordet så att det inte försvinner när Activity ändras  
-- [ ] Skapa en user class som hanterar datan man fyller i  
+- [x] Skapa en user data class som hanterar datan man fyller i  
 - [ ] Lägg in olika users så att man får deras data när man loggar in med rätt credentials (ArrayList OK)
