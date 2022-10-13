@@ -6,14 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".UserSettingsActivity">
 
-    <!--
-    Namn EditText
-    Ålder EditText
-    Male_Female RadioButton
-    Personal rating RatingBar
-    ContentInterests Checkboxes
-    Life progress ProgressBar
-    -->
 
     <TextView
         android:id="@+id/textView2"
