@@ -3,24 +3,31 @@
 
 ### Första Activiten  
 Login
-- [ ] Credentials Namn + Lösen. Hårdkodat Lösen ok  
-- [ ] Action: Gå vidare till nästa Activity/fragment  
+- [x] Credentials Namn + Lösen. Hårdkodat Lösen ok  
+- [x] Gå vidare till nästa Activity/fragment  
   
 
 ### Andra Activiten/fragment  
 Formulär
-- [ ] 5 olika typer av data/ui componenter. (t.ex. åldern : skriv in siffror ,  har körkort : tickar in en checkbox, slogan : textinput )
-- [ ] Skicka/submita datan
+- [x] 5 olika typer av data/ui componenter  
+- [ ] Skicka/submita datan med button
 
 ### Meny  
 Valfri typ  
-- [ ] Navigare alla Activities/fragment
-- [ ] Custom icon
+- [x] Navigare alla Activities/fragment
+- [x] Custom icon
 
 ## Väl godkänt kriterier  
 Uppfyll 2 av 4 punkterna
 
-- [ ] Tredje Activiten/fragment:  visa upp nuvarande sparad data från den andra activityn  
-- [ ] Kotlin  
+- [x] Tredje Activiten/fragment:  visa upp nuvarande sparad data från den andra activityn  
+- [x] Kotlin  
 - [ ] Sparar de saker man har fyllt i om man skulle pausa. (hint:SavedInstanceState)  
-- [ ] Spara data även när man stänger appen (hint: SharedPreferences)
+- [ ] Spara data även när man stänger appen (hint: SharedPreferences)  
+
+
+### Egna krav   
+Login
+- [ ] Spara lösenordet så att det inte försvinner när Activity ändras  
+- [ ] Skapa en user class som hanterar datan man fyller i  
+- [ ] Lägg in olika users så att man får deras data när man loggar in med rätt credentials (ArrayList OK)
