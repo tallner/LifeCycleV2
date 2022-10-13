@@ -2,7 +2,9 @@ package com.example.lifecyclev2
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.CheckBox
 import android.widget.RadioButton
 import android.widget.RadioGroup
@@ -17,6 +19,7 @@ class UserSettingsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_settings)
 
+        val btnSubmit :Button = findViewById(R.id.btn_submit)
         val bottomNav: BottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNav.selectedItemId = R.id.settings
 
@@ -28,6 +31,12 @@ class UserSettingsActivity : AppCompatActivity() {
         var dog = findViewById<CheckBox>(R.id.checkBox_dog)
         var horse = findViewById<CheckBox>(R.id.checkBox_horse)
         var bird = findViewById<CheckBox>(R.id.checkBox_bird)
+
+
+        btnSubmit.setOnClickListener {
+            Log.i("settings", "onCreate: ")
+        }
+
 
 
         bottomNav.setOnItemSelectedListener { item: MenuItem ->
