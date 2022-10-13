@@ -15,14 +15,11 @@ import androidx.core.view.forEach
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
-class MainActivity : AppCompatActivity() {
+class LoggedInActivity : AppCompatActivity() {
 
-    private var loginStatus: Boolean = false
 
-    private lateinit var passwordEdit: EditText
-    private lateinit var usernameEdit: EditText
     private lateinit var loginButton: Button
-
+    private lateinit var bottomNav: BottomNavigationView
 
     private lateinit var sharedPreferences: SharedPreferences
     private var PREFS_KEY = "prefs"
@@ -35,47 +32,41 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_loggedin)
 
-        passwordEdit = findViewById(R.id.password_input)
-        usernameEdit = findViewById(R.id.username_input)
         loginButton = findViewById(R.id.btn_login)
         sharedPreferences = getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE)
-
+        bottomNav = findViewById(R.id.bottom_navigation)
 
         username = sharedPreferences.getString(USER_KEY, "").toString()
         password = sharedPreferences.getString(PWD_KEY, "").toString()
 
-
+        bottomNav.menu.forEach {
+            it.isEnabled=false
+            it.isVisible=false
+        }
 
         loginButton.setOnClickListener {
-            if (TextUtils.isEmpty(usernameEdit.text.toString()) && TextUtils.isEmpty(passwordEdit.text.toString())) {
-                Toast.makeText(this, "Please Enter Username and Password", Toast.LENGTH_SHORT).show();
-            }
-            else {
-                // create variable for editor of shared prefs
-                val editor: SharedPreferences.Editor = sharedPreferences.edit()
 
-                // adding our username and pwd to shared prefs
-                editor.putString(USER_KEY, usernameEdit.text.toString())
-                editor.putString(PWD_KEY, passwordEdit.text.toString())
+        }
 
-                // apply changes to our shared prefs.
-                editor.apply()
-
-                // if email and pwd is not empty we
-                // are opening our main 2 activity on below line.
-                val i = Intent(this, LoggedInActivity::class.java)
-
-                // on below line we are calling start
-                // activity method to start our activity.
-                startActivity(i)
-
-                // on below line we are calling
-                // finish to finish our main activity.
-                finish()
-
-
+        bottomNav.selectedItemId = R.id.home
+        bottomNav.setOnItemSelectedListener { item: MenuItem ->
+            when (item.itemId) {
+                R.id.settings -> {
+                    var i = Intent(this, UserSettingsActivity::class.java)
+                    startActivity(i)
+                    finish()
+                    true
+                }
+                R.id.user -> {
+                    var i = Intent(this, UserDataActivity::class.java)
+                    startActivity(i)
+                    finish()
+                    true
+                }
+                else ->
+                    true
             }
         }
     }
@@ -85,18 +76,21 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         // in this method we are checking if email and pwd are not empty.
         if (!username.equals("") && !password.equals("")) {
-
+            bottomNav.menu.forEach {
+                it.isEnabled=true
+                it.isVisible=true
+            }
             // if email and pwd is not empty we
             // are opening our main 2 activity on below line.
-            val i = Intent(this, LoggedInActivity::class.java)
+           // val i = Intent(this, UserSettingsActivity::class.java)
 
             // on below line we are calling start
             // activity method to start our activity.
-            startActivity(i)
+           // startActivity(i)
 
             // on below line we are calling
             // finish to finish our main activity.
-            finish()
+          //  finish()
         }
     }
 
