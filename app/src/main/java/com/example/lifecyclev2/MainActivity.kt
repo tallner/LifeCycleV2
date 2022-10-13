@@ -17,12 +17,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
-    private var loginStatus: Boolean = false
-
     private lateinit var passwordEdit: EditText
     private lateinit var usernameEdit: EditText
     private lateinit var loginButton: Button
-
 
     private lateinit var sharedPreferences: SharedPreferences
     private var PREFS_KEY = "prefs"
@@ -31,7 +28,6 @@ class MainActivity : AppCompatActivity() {
 
     private var username = ""
     private var password = ""
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,10 +38,8 @@ class MainActivity : AppCompatActivity() {
         loginButton = findViewById(R.id.btn_login)
         sharedPreferences = getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE)
 
-
         username = sharedPreferences.getString(USER_KEY, "").toString()
         password = sharedPreferences.getString(PWD_KEY, "").toString()
-
 
 
         loginButton.setOnClickListener {
@@ -74,7 +68,6 @@ class MainActivity : AppCompatActivity() {
                 // on below line we are calling
                 // finish to finish our main activity.
                 finish()
-
 
             }
         }

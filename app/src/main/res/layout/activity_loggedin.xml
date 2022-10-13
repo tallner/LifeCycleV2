@@ -26,7 +26,7 @@
         android:id="@+id/btn_logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="276dp"
+        android:layout_marginBottom="60dp"
         android:text="Logout"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,15 +46,21 @@
         />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tv_username"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="Your are logged in"
+        android:layout_height="54dp"
+        android:text="TextView"
+        android:textStyle="bold"
         android:textAlignment="center"
         android:textSize="22dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_login"
+        app:layout_constraintBottom_toTopOf="@+id/btn_logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        tools:layout_editor_absoluteX="-16dp" />
+        app:layout_constraintVertical_bias="0.514"
+        android:gravity="center_horizontal" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
