@@ -27,7 +27,6 @@ Uppfyll 2 av 4 punkterna
 
 
 ## Egna krav   
-Login
 - [ ] Spara lösenordet så att det inte försvinner när Activity ändras  
 - [ ] Skapa en user class som hanterar datan man fyller i  
 - [ ] Lägg in olika users så att man får deras data när man loggar in med rätt credentials (ArrayList OK)
