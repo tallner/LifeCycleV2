@@ -26,7 +26,7 @@ Uppfyll 2 av 4 punkterna
 - [ ] Spara data även när man stänger appen (hint: SharedPreferences)  
 
 
-### Egna krav   
+## Egna krav   
 Login
 - [ ] Spara lösenordet så att det inte försvinner när Activity ändras  
 - [ ] Skapa en user class som hanterar datan man fyller i  
