@@ -57,6 +57,7 @@ class UserSettingsActivity : AppCompatActivity() {
                 R.id.home -> {
                     var it = Intent(this, MainActivity::class.java)
                     startActivity(it)
+                    finish()
                     true
                 }
 
@@ -64,6 +65,7 @@ class UserSettingsActivity : AppCompatActivity() {
                     var it = Intent(this, UserDataActivity::class.java)
                     it.putExtra("EXTRA_USER",user)
                     startActivity(it)
+                    finish()
                     true
                 }
                 else ->

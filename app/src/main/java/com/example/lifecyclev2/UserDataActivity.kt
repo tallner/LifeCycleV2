@@ -23,13 +23,14 @@ class UserDataActivity : AppCompatActivity() {
                 R.id.home -> {
                     var i = Intent(this, MainActivity::class.java)
                     startActivity(i)
-
+                    finish()
                     true
                 }
 
                 R.id.settings -> {
                     var i = Intent(this, UserSettingsActivity::class.java)
                     startActivity(i)
+                    finish()
                     true
                 }
                 else -> true
