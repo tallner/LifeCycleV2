@@ -18,7 +18,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class LoggedInActivity : AppCompatActivity() {
 
 
-    private lateinit var loginButton: Button
+    private lateinit var logoutButton: Button
     private lateinit var bottomNav: BottomNavigationView
 
     private lateinit var sharedPreferences: SharedPreferences
@@ -34,7 +34,7 @@ class LoggedInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_loggedin)
 
-        loginButton = findViewById(R.id.btn_login)
+        logoutButton = findViewById(R.id.btn_logout)
         sharedPreferences = getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE)
         bottomNav = findViewById(R.id.bottom_navigation)
 
@@ -46,8 +46,27 @@ class LoggedInActivity : AppCompatActivity() {
             it.isVisible=false
         }
 
-        loginButton.setOnClickListener {
+        logoutButton.setOnClickListener {
+            // on below line we are creating a variable for
+            // editor of shared preferences and initializing it.
+            val editor: SharedPreferences.Editor = sharedPreferences.edit()
 
+            // on below line we are clearing our editor.
+            editor.clear()
+
+            // on below line we are applying changes which are cleared.
+            editor.apply()
+
+            // on below line we are opening our mainactivity by calling intent
+            val i = Intent(this, MainActivity::class.java)
+
+            // on below line we are simply starting
+            // our activity to start main activity
+            startActivity(i)
+
+            // on below line we are calling
+            // finish to close our this activity
+            finish()
         }
 
         bottomNav.selectedItemId = R.id.home
