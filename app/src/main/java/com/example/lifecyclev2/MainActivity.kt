@@ -16,23 +16,24 @@ class MainActivity : AppCompatActivity() {
 
     private var loginStatus: Boolean = false
 
+    lateinit var password: EditText
+    lateinit var loginButton: Button
+    lateinit var bottomNav: BottomNavigationView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Log.i("MyTag", this.lifecycle.currentState.toString())
+        password = findViewById(R.id.password_input)
+        loginButton = findViewById(R.id.btn_login)
+        bottomNav = findViewById(R.id.bottom_navigation)
 
-        val bottomNav: BottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-        bottomNav.selectedItemId = R.id.home
+
         bottomNav.menu.forEach {
             it.isEnabled=loginStatus
             it.isVisible=loginStatus
         }
-
-        val password: EditText = findViewById(R.id.password_input)
-        val loginButton: Button = findViewById(R.id.btn_login)
-
 
 
         loginButton.setOnClickListener {
@@ -43,36 +44,23 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
-
-
-
-
+        bottomNav.selectedItemId = R.id.home
         bottomNav.setOnItemSelectedListener { item: MenuItem ->
             when (item.itemId) {
-                R.id.home -> {
-
-                    true
-                }
-
                 R.id.settings -> {
                     var i = Intent(this, UserSettingsActivity::class.java)
                     startActivity(i)
                     true
                 }
-
                 R.id.user -> {
                     var i = Intent(this, UserDataActivity::class.java)
                     startActivity(i)
                     true
                 }
-
                 else ->
                     true
             }
-
         }
-
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -83,7 +71,6 @@ class MainActivity : AppCompatActivity() {
         super.onSaveInstanceState(outState)
 
         Log.i("MyTag", this.lifecycle.currentState.toString())
-
 
     }
 
